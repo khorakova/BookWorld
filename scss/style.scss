@@ -6,21 +6,42 @@ $c-second: #B2A567;
 $c-third: #E0DDAA;
 
 body {
+    max-width: 1200px;
+    margin: 0 auto;
     font-family: 'Work Sans', sans-serif;
     color: $c-first;
 }
 
-.header {
-    padding: 5px;
+.header-top {
+    @media screen and (min-width: 540px) {
+        display: flex;
+    justify-content: space-between;
+    }
+    
 }
 
 .icons {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    &__item {
-        color: $c-first;
+    display: none;
+    @media screen and (min-width: 540px) {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 5px;
+        &__item {
+            margin: 5px;
+        }
+        &__image {
+            color: $c-first;
+            width: 25px;
+        }
+    }
+}
+
+.search {
+    display: none;
+    @media screen and (min-width: 540px) {
+        display: flex;
         margin: 5px;
     }
 }
@@ -30,25 +51,30 @@ body {
     margin-top: 15px;
     border-bottom: 1px solid $c-second;
     &__image {
-        width: 80%;
+        width: 60%;
+        @media screen and (min-width: 540px) {
+            width: 40%;
+        }
     }
-}
-
-.search {
-    display: none;
 }
 
 .menu {
     display: none;
-    list-style: none;
-    padding-left: 0;
-    margin: 5px;
-    text-align: center;
-    &__item {
+    @media screen and (min-width: 540px) {
+        padding-left: 0;
+        margin: 10px;
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        &__item {
         text-decoration: none;
         color: $c-first;
-        border-bottom: 1px solid $c-third;
+        &:hover {
+            color: $c-second;
+        }
+        }
     }
+    
 }
 
 .hero {
@@ -60,10 +86,18 @@ body {
         height: 200px;
         color: whitesmoke;
         padding: 30px;
+        @media screen and (min-width: 540px) {
+            height: 250px;
+            padding: 50px;
+        }
+        @media screen and (min-width: 960px) {
+            height: 300px;
+        }
     }
     &__title {
         margin: 0;
         font-size: 20px;
+        font-weight: 400;
     }
     &__subtitle {
         font-size: 14px;
