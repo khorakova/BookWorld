@@ -2,7 +2,9 @@ html {
   box-sizing: border-box;
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: inherit;
 }
 
@@ -10,7 +12,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   font-family: "Work Sans", sans-serif;
-  color: #0E151B;
+  color: #0e151b;
 }
 
 @media screen and (min-width: 540px) {
@@ -23,6 +25,18 @@ body {
 .icons {
   display: none;
 }
+.icons__image {
+  color: #0e151b;
+  width: 25px;
+}
+.icons__description {
+  font-size: 14px;
+  text-decoration: none;
+  color: #0e151b;
+}
+.icons__p {
+  margin: 10px;
+}
 @media screen and (min-width: 540px) {
   .icons {
     display: flex;
@@ -34,10 +48,6 @@ body {
   .icons__item {
     margin: 5px;
   }
-  .icons__image {
-    color: #0E151B;
-    width: 25px;
-  }
 }
 
 .search {
@@ -48,12 +58,27 @@ body {
     display: flex;
     margin: 5px;
   }
+  .search__label {
+    flex-basis: 20%;
+    text-align: center;
+    order: 1;
+  }
+  .search__image {
+    color: #0e151b;
+    width: 25px;
+  }
+  .search__input {
+    width: 80%;
+    flex-basis: 80%;
+    border: 0;
+    border-bottom: 1px solid #0e151b;
+  }
 }
 
 .logo {
   text-align: center;
   margin-top: 15px;
-  border-bottom: 1px solid #B2A567;
+  border-bottom: 1px solid #b2a567;
 }
 .logo__image {
   width: 60%;
@@ -77,10 +102,12 @@ body {
   }
   .menu__item {
     text-decoration: none;
-    color: #0E151B;
+    color: #0e151b;
+    text-transform: uppercase;
+    font-size: 16px;
   }
   .menu__item:hover {
-    color: #B2A567;
+    color: #b2a567;
   }
 }
 
@@ -113,4 +140,55 @@ body {
 }
 .hero__subtitle {
   font-size: 14px;
+}
+
+@media screen and (min-width: 540px) {
+  .grid-template {
+    display: grid;
+    grid-template-columns: 70% 25%;
+    gap: 5%;
+  }
+}
+.footer {
+  padding: 5px 30px;
+  background-color: #e0ddaa;
+  text-align: center;
+}
+.footer__title {
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+}
+.footer__title::after {
+  content: " ";
+  display: block;
+  width: 15vh;
+  height: 1px;
+  background-color: #b2a567;
+  margin: 5px auto;
+}
+.footer__about-me {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__about-content {
+  text-align: left;
+}
+.footer__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 120px;
+  height: 120px;
+  flex-basis: 20%;
+  border-radius: 50%;
+}
+.footer__follow-me {
+  display: inline-block;
+}
+.footer__icons {
+  display: flex;
+  gap: 5px;
 }/*# sourceMappingURL=style.css.map */
