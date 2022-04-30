@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book World</title>
+    <link rel="stylesheet" href="/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header-firt-half">
+            <div class="header-top">
+            <div class="header-icons">
+                <ul class="icons">
+                    <li><a class="icons__item" href="#"><i class="fa fa-instagram icons__image" aria-hidden="true"></i></a></li>
+                    <li><a class="icons__item" href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a class="icons__item" href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <div class="relative">
+            <form class="search">
+                <input class="search__input" type="text" name="search" placeholder="Hledat" size="20">
+                <button class="search__button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+            </div>
+            </div>
+            <div class="logo">
+                <img  class="logo__image" src="/images/logo.svg" alt="Book World logo">
+            </div>
+        </div>
+        <div class="header-menu">
+            <ul class="menu">
+                <li><a class="menu__item" href="/">Hlavní stránka</a></li>
+                <li><a class="menu__item" href="/novinky/">Novinky</a></li>
+                <li><a class="menu__item" href="#">Chystám se číst</a></li>
+                <li><a class="menu__item" href="/recenze/">Recenze</a></li>
+                <li><a class="menu__item" href="#">Žebříčky</a></li>
+            </ul>
+        </div>
+    </header>
+        {{ content | safe }}
+    <footer class="footer">
+        <div class="grid-template__footer">
+            <div class="footer__left">
+                <h3 class="footer__title">O mně</h3>
+                <div class="footer__about-me">
+                <img class="footer__image" src="/images/portret.jpeg">
+                <p class="footer__about-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam in elit duis bibendum non rhoncus. Interdum venenatis ullamcorper ultrices viverra. Sed velit augue ac dolor aenean pellentesque mollis tincidunt lectus. Facilisis lacus faucibus cursus bibendum bibendum duis arcu sapien arcu.
+                    </p>
+                </div>
+                </div>
+            <div class="footer__right">
+                <h3 class="footer__title">Sleduj mě</h3>
+                <div class="footer__follow-me">
+                    <div class="footer__icons">
+                        <div class="icons__item"><i class="fa fa-instagram icons__image" aria-hidden="true"></i></div>
+                        <p class="icons__p"><a class="icons__description" href="#">Instagram</a></p>
+                    </div>
+                    <div class="footer__icons">
+                        <div class="icons__item"><i class="fa fa-facebook-square" aria-hidden="true"></i></div>
+                        <p class="icons__p"><a class="icons__description" href="#">Facebook</a></p>
+                    </div>
+                    <div class="footer__icons">
+                        <div class="icons__item"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                        <p class="icons__p"><a class="icons__description" href="#">E-mail</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
