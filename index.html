@@ -7,6 +7,7 @@
     <title>Book World</title>
     <link rel="stylesheet" href="/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     
@@ -15,15 +16,17 @@
             <div class="header-top">
             <div class="header-icons">
                 <ul class="icons">
-                    <li><a class="icons__item" href="#"><img class="icons__image" src="/images/instagram-brands.svg"></a></li>
-                    <li><a class="icons__item" href="#"><img class="icons__image" src="/images/facebook-square-brands.svg"></a></li>
-                    <li><a class="icons__item" href="#"><img class="icons__image" src="/images/envelope-regular.svg"></a></li>
+                    <li><a class="icons__item" href="#"><i class="fa fa-instagram icons__image" aria-hidden="true"></i></a></li>
+                    <li><a class="icons__item" href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a class="icons__item" href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
+            <div class="relative">
             <form class="search">
-                <label class="search__label" for="search"><img class="search__image" src="/images/magnifying-glass-solid.svg"></label>
-                <input class="search__input" type="text" name="search" placeholder="Hledat" size="10">
+                <input class="search__input" type="text" name="search" placeholder="Hledat" size="20">
+                <button class="search__button"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
+            </div>
             </div>
             <div class="logo">
                 <img  class="logo__image" src="/images/logo.svg" alt="Book World logo">
@@ -47,7 +50,7 @@
     </section>
 
     <section class="main-content">
-        <div class="grid-template">
+        <div class="grid-article">
 
             <div class="article">
                 <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
@@ -84,7 +87,9 @@
                     <button class="button">číst dále</button>
                 </div>
             </div>
+        </div>    
 
+        <div class="grid-right-side">
             <div class="news">
                 <h3 class="news__title">Brzy vychází</h3>
                 <div class="grid-small">
@@ -103,6 +108,19 @@
                 </div>
             </div>
 
+            <div class="write-me">
+                <h3 class="write-me__title">Napiš mi</h3>
+                <form>
+                    <label class="write-me__label" for="name">Jméno</label>
+                    <input class="write-me__input" type="text" name="name">
+                    <label class="write-me__label" for="email">E-mail</label>
+                    <input class="write-me__input" type="email" name="email">
+                    <label class="write-me__label" for="content">Napiš mi</label>
+                    <textarea class="write-me__textarea" name="content" rows="4"> </textarea>
+                    <button class="button button--write-me">Odeslat</button>
+                </form>
+            </div>
+
             <div class="events">
                 <h3 class="events__title">Události</h3>
                 <div class="grid-small">
@@ -116,8 +134,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
+        
     </section>
 
 
@@ -125,7 +144,7 @@
 
 
     <footer class="footer">
-        <div class="grid-template">
+        <div class="grid-template__footer">
             <div class="footer__left">
                 <h3 class="footer__title">O mně</h3>
                 <div class="footer__about-me">
@@ -138,15 +157,15 @@
                 <h3 class="footer__title">Sleduj mě</h3>
                 <div class="footer__follow-me">
                     <div class="footer__icons">
-                        <img class="icons__image" src="/images/instagram-brands.svg">
+                        <div class="icons__item"><i class="fa fa-instagram icons__image" aria-hidden="true"></i></div>
                         <p class="icons__p"><a class="icons__description" href="#">Instagram</a></p>
                     </div>
                     <div class="footer__icons">
-                        <img class="icons__image" src="/images/facebook-square-brands.svg">
+                        <div class="icons__item"><i class="fa fa-facebook-square" aria-hidden="true"></i></div>
                         <p class="icons__p"><a class="icons__description" href="#">Facebook</a></p>
                     </div>
                     <div class="footer__icons">
-                        <img class="icons__image" src="/images/envelope-regular.svg">
+                        <div class="icons__item"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
                         <p class="icons__p"><a class="icons__description" href="#">E-mail</a></p>
                     </div>
                 </div>

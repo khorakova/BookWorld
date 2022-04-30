@@ -27,9 +27,8 @@ body {
 
 .icons {
   display: none;
-  &__image {
-    color: $c-first;
-    width: 25px;
+  &__item {
+    font-size: 25px;
   }
   &__description {
     font-size: 14px;
@@ -47,6 +46,8 @@ body {
     margin: 5px;
     &__item {
       margin: 5px;
+      color: $c-first;
+      font-size: 25px;
     }
   }
 }
@@ -56,20 +57,26 @@ body {
   @media screen and (min-width: 540px) {
     display: flex;
     margin: 5px;
-    &__label {
-      flex-basis: 20%;
-      text-align: center;
-      order: 1;
-    }
+    gap: 5px;
     &__image {
-      color: $c-first;
-      width: 25px;
+      width: 15px;
+      height: 15px;
     }
     &__input {
       width: 80%;
       flex-basis: 80%;
-      border: 0;
-      border-bottom: 1px solid #0e151b;
+      border: 1px solid $c-first;
+      border-radius: 5px;
+    }
+    &__button {
+      padding: 5px;
+      border: 1px solid $c-first;
+      background-color: unset;
+      border-radius: 5px;
+      &:hover {
+        background-color: $c-first;
+        color: white;
+      }
     }
   }
 }
@@ -125,28 +132,58 @@ body {
   }
   &__title {
     margin: 0;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 400;
   }
   &__subtitle {
-    font-size: 14px;
+    font-size: 16px;
     @media screen and (min-width: 540px) {
       width: 80%;
+      font-size: 18px;
     }
     @media screen and (min-width: 960px) {
       width: 60%;
+      font-size: 20px;
     }
   }
 }
 
-@media screen and (min-width: 960px) {
-  .grid-template {
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  @media screen and (min-width: 960px) {
+    grid-template-columns: 75% 25%;
+  }
+}
+
+.grid-article {
     display: grid;
-    grid-template-columns: 75% 23%;
+    grid-column: 1fr;
     grid-auto-rows: auto;
     gap: 20px;
+}
+
+.grid-right-side {
+  display: grid;
+  grid-column: 1fr;
+  grid-auto-rows: auto;
+  gap: 20px;
+}
+
+.grid-template__footer {
+  display: grid;
+  grid-column: 1fr;
+  grid-auto-rows: auto;
+  gap: 20px;
+  @media screen and (min-width: 540px) {
+    display: grid;
+    grid-column: 1fr;
+    }
+  @media screen and (min-width: 960px) {
+    grid-template-columns: 75% 23%;
     grid-auto-flow: dense;
-  }
+    }
 }
 
 .main-content {
@@ -154,10 +191,15 @@ body {
 }
 
 .article {
-  grid-column: 1;
   position: relative;
   display: flex;
   gap: 15px;
+  @media screen and (min-width: 540px) {
+    grid-column: 1 / span 3;
+  }
+  @media screen and (min-width: 960px) {
+    grid-column: 1 / span 1;
+  }
   &__image {
     width: 25%;
     object-fit: contain;
@@ -186,12 +228,13 @@ body {
 }
 
 .article:not(:last-child) {
+    padding-bottom: 10px;
     border-bottom: 1px solid $c-third;
 }
 
 .button {
   position: absolute;
-  right: 0;
+  right: 10px;
   bottom: 10px;
   text-transform: uppercase;
   border: 1px solid $c-second;
@@ -203,11 +246,20 @@ body {
     background-color: $c-second;
     color: white;
   }
+  &--write-me {
+    border: 1px solid $c-first;
+    color: $c-first;
+    &:hover {
+      background-color: $c-first;
+      color: white;
+    }
+  }
 }
 
 .news, .events {
   border: 1px solid $c-third;
   padding: 20px;
+  box-shadow: 1px 1px 20px $c-third;
   &__title {
     margin: 0;
     text-transform: uppercase;
@@ -230,11 +282,13 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  align-items: start;
 }
 
 .flex__item {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 .flex__date {
@@ -245,6 +299,46 @@ body {
   text-align: center;
   border: 1px solid $c-second;
   border-radius: 50%;
+}
+
+.write-me {
+  position: relative;
+  padding: 20px;
+  background-color: $c-third;
+  &__title {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    &::after {
+      content: " ";
+      display: block;
+      width: 15vh;
+      height: 1px;
+      background-color: $c-first;
+      margin: 5px auto;
+    }
+  }
+  &__label {
+    font-size: 14px;
+    font-family: "Work Sans", sans-serif;
+    color: $c-first;
+  }
+  &__input {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  &__textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
 }
 
 .footer {
@@ -287,5 +381,6 @@ body {
   &__icons {
     display: flex;
     gap: 5px;
+    align-items: center;
   }
 }
