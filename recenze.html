@@ -4,7 +4,7 @@ title: Recenze
 ---
 <section class="new-content">
 
-<div class="filter">
+<!-- <div class="filter">
 <label class="filter__label" for="genre">Žánr</label>
 <select class="filter__select" name="genre" id="genre">
     <option></option>
@@ -27,9 +27,37 @@ title: Recenze
     <option>2 hvězdičky</option>
     <option>1 hvězdička</option>
 </select>
+</div> -->
+
+<div class="filter">
+    <p class="filter__header">Filtr:</p>
+    <div class="dropdown">
+        <button class="dropdown__button">Žánr</button>
+        <div class="dropdown__content">
+            <div class="dropdown__item">Česká beletrie</div>
+            <div class="dropdown__item">Detektivka</div>
+            <div class="dropdown__item">Romantika</div>
+            <div class="dropdown__item">Historický román</div>
+            <div class="dropdown__item">Fantasy</div>
+            <div class="dropdown__item">Thriller</div>
+            <div class="dropdown__item">Životopisný divomán</div>
+            <div class="dropdown__item">Young Adult</div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropdown__button">Hodnocení</button>
+        <div class="dropdown__content">
+            <div class="dropdown__item">5 hvězdiček</div>
+            <div class="dropdown__item">4 hvězdiček</div>
+            <div class="dropdown__item">3 hvězdiček</div>
+            <div class="dropdown__item">2 hvězdiček</div>
+            <div class="dropdown__item">1 hvězdiček</div>
+        </div>
+    </div>
 </div>
 
-<div class="grid-news">
+<div class="grid-article">
 <div class="article">
     <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
     <div class="article__content">
@@ -52,6 +80,22 @@ title: Recenze
         <button class="button">číst dále</button>
     </div>
 </div>
+<div class="article">
+    <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
+    <div class="article__content">
+        <h2 class="article__title">Půlnoční knihovna</h2>
+        <p class="article__author">Matt Haig</p>
+        <p class="article__genre">Světová beletrie, Román</p>
+        <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
+        <p class="article__score">Hodnocení</p>
+        <button class="button">číst dále</button>
+    </div>
+</div>
+</div>
+
+<div class="next-page">
+<button class="button button--center">načíst další</button>
+<p>1, 2, 3, .... další</p>
 </div>
 
 </section>

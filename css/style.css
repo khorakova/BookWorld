@@ -66,17 +66,22 @@ body {
   .search__input {
     width: 80%;
     flex-basis: 80%;
-    border: 1px solid #0e151b;
+    border: 1px solid #b2a567;
     border-radius: 5px;
+    padding-left: 5px;
+  }
+  .search__input:focus {
+    border: 2px solid #b2a567;
+    outline: none;
   }
   .search__button {
     padding: 5px;
-    border: 1px solid #0e151b;
+    border: 1px solid #b2a567;
     background-color: unset;
     border-radius: 5px;
   }
   .search__button:hover {
-    background-color: #0e151b;
+    background-color: #b2a567;
     color: white;
   }
 }
@@ -287,6 +292,16 @@ body {
   background-color: #0e151b;
   color: white;
 }
+.button--center {
+  position: unset;
+  margin-right: 10px;
+}
+
+.next-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .news, .events {
   border: 1px solid #e0ddaa;
@@ -366,12 +381,20 @@ body {
   font-size: 16px;
   margin-bottom: 5px;
 }
+.write-me__input:focus {
+  outline: none;
+  border: 2px solid #b2a567;
+}
 .write-me__textarea {
   width: 100%;
   border-radius: 5px;
   border: none;
   font-size: 16px;
   margin-bottom: 25px;
+}
+.write-me__textarea:focus {
+  outline: none;
+  border: 2px solid #b2a567;
 }
 
 .footer {
@@ -407,7 +430,6 @@ body {
      object-fit: cover;
   width: 120px;
   height: 120px;
-  flex-basis: 20%;
   border-radius: 50%;
 }
 .footer__follow-me {
@@ -420,12 +442,64 @@ body {
 }
 
 .filter {
-  text-align: right;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
-.filter__select {
+.filter__header {
+  margin-right: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+.dropdown__button {
+  position: relative;
+  text-transform: uppercase;
   border: 1px solid #b2a567;
   border-radius: 5px;
-  font-size: 16px;
+  padding: 5px 15px;
+  background-color: unset;
+  color: #b2a567;
+}
+.dropdown__button:hover {
+  background-color: #b2a567;
+  color: white;
+}
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: #e0ddaa;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: #0e151b;
+  z-index: 1;
+}
+.dropdown__item {
+  padding: 8px 12px;
+  display: block;
+  border-bottom: 1px solid #b2a567;
+}
+.dropdown__item:hover {
+  background-color: #b2a567;
+  color: white;
+}
+
+.dropdown:hover .dropdown__content {
+  display: block;
+}
+
+.list {
+  width: 50%;
+}
+.list__item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.list__image {
+  height: 100px;
 }/*# sourceMappingURL=style.css.map */
