@@ -1,0 +1,44 @@
+@use 'colors'; 
+
+.article {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    @media screen and (min-width: 540px) {
+      grid-column: 1 / span 3;
+    }
+    @media screen and (min-width: 960px) {
+      grid-column: 1 / span 1;
+    }
+    &__image {
+      width: 25%;
+      object-fit: contain;
+    }
+    &__title {
+      margin: 5px 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 400;
+      &::after {
+        content: " ";
+        display: block;
+        width: 30vh;
+        height: 1px;
+        background-color: colors.$c-second;
+        margin: 5px auto;
+      }
+    }
+    &__author, &__genre {
+      margin: 5px 0;
+    }
+    &__review {
+      text-align: justify;
+    }
+  }
+  
+  .article:not(:last-child) {
+      padding-bottom: 10px;
+      border-bottom: 1px solid colors.$c-third;
+  }

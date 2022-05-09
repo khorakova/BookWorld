@@ -1,0 +1,36 @@
+@use 'colors';
+
+.hero {
+    width: 100%;
+    &__background {
+      background-image: url(/images/hero-picture-black.png);
+      background-position: center;
+      background-size: cover;
+      height: 200px;
+      color: whitesmoke;
+      padding: 30px;
+      @media screen and (min-width: 540px) {
+        height: 250px;
+        padding: 50px;
+      }
+      @media screen and (min-width: 960px) {
+        height: 300px;
+      }
+    }
+    &__title {
+      margin: 0;
+      font-size: 40px;
+      font-weight: 400;
+    }
+    &__subtitle {
+      font-size: 16px;
+      @media screen and (min-width: 540px) {
+        width: 80%;
+        font-size: 18px;
+      }
+      @media screen and (min-width: 960px) {
+        width: 60%;
+        font-size: 20px;
+      }
+    }
+  }

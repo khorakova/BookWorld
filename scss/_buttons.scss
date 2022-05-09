@@ -1,0 +1,35 @@
+@use 'colors'; 
+
+.button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    text-transform: uppercase;
+    border: 1px solid colors.$c-second;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: unset;
+    color: colors.$c-second;
+    &:hover {
+      background-color: colors.$c-second;
+      color: white;
+    }
+    &--write-me {
+      border: 1px solid colors.$c-first;
+      color: colors.$c-first;
+      &:hover {
+        background-color: colors.$c-first;
+        color: white;
+      }
+    }
+    &--center {
+      position: unset;
+      margin-right: 10px;
+    }
+  }
+
+  .next-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,0 +1,25 @@
+@use 'colors';
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px 30px;
+    @media screen and (min-width: 960px) {
+      grid-template-columns: 75% 25%;
+    }
+  }
+
+.grid-article {
+    display: grid;
+    grid-column: 1fr;
+    grid-auto-rows: auto;
+    gap: 20px;
+}
+
+.grid-right-side {
+  display: grid;
+  grid-column: 1fr;
+  grid-auto-rows: auto;
+  gap: 20px;
+}

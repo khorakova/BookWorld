@@ -1,0 +1,81 @@
+@use 'colors';
+
+.header-top {
+    @media screen and (min-width: 540px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+  .icons {
+    display: none;
+    &__item {
+      font-size: 25px;
+    }
+    &__description {
+      font-size: 14px;
+      text-decoration: none;
+      color: colors.$c-first;
+    }
+    &__p {
+        margin: 10px;
+    }
+    @media screen and (min-width: 540px) {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 5px;
+      &__item {
+        margin: 5px;
+        color: colors.$c-first;
+        font-size: 25px;
+      }
+    }
+  }
+  
+  .search {
+    display: none;
+    @media screen and (min-width: 540px) {
+      display: flex;
+      margin: 5px;
+      gap: 5px;
+      &__image {
+        width: 15px;
+        height: 15px;
+      }
+      &__input {
+        width: 80%;
+        flex-basis: 80%;
+        border: 1px solid colors.$c-second;
+        border-radius: 5px;
+        padding-left: 5px;
+        &:focus {
+          border: 2px solid colors.$c-second;
+          outline: none;
+        }
+      }
+      &__button {
+        padding: 5px;
+        border: 1px solid colors.$c-second;
+        background-color: unset;
+        border-radius: 5px;
+        &:hover {
+          background-color: colors.$c-second;
+          color: white;
+        }
+      }
+    }
+  }
+  
+  .logo {
+    text-align: center;
+    margin-top: 15px;
+    border-bottom: 1px solid colors.$c-second;
+    &__image {
+      width: 60%;
+      @media screen and (min-width: 540px) {
+        width: 40%;
+      }
+    }
+  }

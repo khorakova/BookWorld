@@ -1,0 +1,11 @@
+@use 'colors'; 
+
+body {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  color: colors.$c-first;
+}
+
+.content {
+  padding: 20px 30px;
+}

@@ -1,0 +1,28 @@
+@use 'colors';
+
+.menu {
+    display: none;
+    @media screen and (min-width: 540px) {
+      border-bottom: 1px solid colors.$c-third;
+      box-shadow: 0 1px 3px colors.$c-third;
+      padding-left: 0;
+      padding: 10px;
+      margin: 0;
+      display: flex;
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+      &__item {
+        text-decoration: none;
+        color: colors.$c-first;
+        text-transform: uppercase;
+        font-size: 16px;
+        &:hover {
+          color: colors.$c-second;
+        }
+        &:active {
+          color: colors.$c-second;
+        }
+      }
+    }
+  }

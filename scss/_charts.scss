@@ -1,0 +1,38 @@
+@use 'colors'; 
+
+
+.grid-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 10px;
+  @media screen and (min-width: 850px) {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+.list {
+    border: 1px solid colors.$c-second;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    &__item {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid colors.$c-third;
+      border-radius: 5px;
+      padding: 3px;
+    }
+    &__title {
+      margin: 0;
+      text-align: center;
+    }
+    &__image {
+      height: 100px;
+    }
+  }
+

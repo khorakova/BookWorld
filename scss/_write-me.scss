@@ -1,0 +1,51 @@
+@use 'colors'; 
+
+.write-me {
+    position: relative;
+    padding: 20px;
+    background-color: colors.$c-third;
+    &__title {
+      margin: 0;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 400;
+      font-size: 18px;
+      &::after {
+        content: " ";
+        display: block;
+        width: 15vh;
+        height: 1px;
+        background-color: colors.$c-first;
+        margin: 5px auto;
+      }
+    }
+    &__label {
+      font-size: 14px;
+      font-family: "Work Sans", sans-serif;
+      color: colors.$c-first;
+    }
+    &__input {
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      margin-bottom: 5px;
+      &:focus {
+        outline: none;
+        border: 2px solid colors.$c-second;
+      }
+    }
+    &__textarea {
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      margin-bottom: 25px;
+      &:focus {
+        outline: none;
+        border: 2px solid colors.$c-second;
+      }
+    }
+  }
+  
+  
