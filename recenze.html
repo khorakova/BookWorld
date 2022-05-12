@@ -4,31 +4,6 @@ title: Recenze
 ---
 <section class="content">
 
-<!-- <div class="filter">
-<label class="filter__label" for="genre">Žánr</label>
-<select class="filter__select" name="genre" id="genre">
-    <option></option>
-    <option>Česká beletrie</option>
-    <option>Detektivka</option>
-    <option>Romantika</option>
-    <option>Historický román</option>
-    <option>Fantasy</option>
-    <option>Thriller</option>
-    <option>Životopisný román</option>
-    <option>Young Adult</option>
-</select>
-
-<label class="filter__label" for="score">Hodnocení</label>
-<select class="filter__select" name="score" id="score">
-    <option></option>
-    <option>5 hvězdiček</option>
-    <option>4 hvězdičky</option>
-    <option>3 hvězdičky</option>
-    <option>2 hvězdičky</option>
-    <option>1 hvězdička</option>
-</select>
-</div> -->
-
 <div class="filter">
     <p class="filter__header">Filtr:</p>
     <div class="dropdown">
@@ -58,7 +33,22 @@ title: Recenze
 </div>
 
 <div class="grid-article">
-<div class="article">
+
+{% for recenze in collections.recenze | reverse %}
+    <div class="article">
+        <img class="article__image" src="/images/{{recenze.data.foto }}" alt="{{ recenze.data.alt }}">
+        <div class="article__content">
+            <h2 class="article__title">{{ recenze.data.title }}</h2>
+            <p class="article__author">{{ recenze.data.author }}</p>
+            <p class="article__genre">{{ recenze.data.genre }}</p>
+            <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
+            <p class="article__score">{{ recenze.data.score }}</p>
+            <button class="button"><a class="button__link" href="{{ recenze.url }}">Číst dále</a></button>
+        </div>
+    </div>
+{% endfor %}
+
+<!-- <div class="article">
     <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
     <div class="article__content">
         <h2 class="article__title">Půlnoční knihovna</h2>
@@ -79,18 +69,7 @@ title: Recenze
         <p class="article__score">Hodnocení</p>
         <button class="button">číst dále</button>
     </div>
-</div>
-<div class="article">
-    <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
-    <div class="article__content">
-        <h2 class="article__title">Půlnoční knihovna</h2>
-        <p class="article__author">Matt Haig</p>
-        <p class="article__genre">Světová beletrie, Román</p>
-        <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
-        <p class="article__score">Hodnocení</p>
-        <button class="button">číst dále</button>
-    </div>
-</div>
+</div> -->
 </div>
 
 <div class="next-page">

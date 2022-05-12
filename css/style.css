@@ -1,10 +1,20 @@
+html {
+  box-sizing: border-box;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
   color: #0e151b;
 }
 
-.content {
+.content, .main-content {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px 30px;
 }
 
@@ -47,7 +57,7 @@ body {
 .search {
   display: none;
 }
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 800px) {
   .search {
     display: flex;
     margin: 5px;
@@ -97,13 +107,14 @@ body {
 .menu {
   display: none;
 }
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 800px) {
   .menu {
+    max-width: 1200px;
+    margin: 0 auto;
     border-bottom: 1px solid #e0ddaa;
-    box-shadow: 0 1px 3px #e0ddaa;
+    box-shadow: 0 1px 0 #e0ddaa;
     padding-left: 0;
     padding: 10px;
-    margin: 0;
     display: flex;
     list-style: none;
     justify-content: space-around;
@@ -118,7 +129,7 @@ body {
   .menu__item:hover {
     color: #b2a567;
   }
-  .menu__item:active {
+  .menu__item--active {
     color: #b2a567;
   }
 }
@@ -132,7 +143,7 @@ body {
   background-size: cover;
   height: 200px;
   color: whitesmoke;
-  padding: 30px;
+  padding-top: 30px;
 }
 @media screen and (min-width: 540px) {
   .hero__background {
@@ -144,6 +155,11 @@ body {
   .hero__background {
     height: 300px;
   }
+}
+.hero__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 .hero__title {
   margin: 0;
@@ -195,7 +211,7 @@ body {
 .news, .events {
   border: 1px solid #e0ddaa;
   padding: 20px;
-  box-shadow: 1px 1px 20px #e0ddaa;
+  box-shadow: 1px 1px 10px #e0ddaa;
 }
 .news__title, .events__title {
   margin: 0;
@@ -236,6 +252,9 @@ body {
   text-align: center;
   border: 1px solid #b2a567;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .write-me {
@@ -303,9 +322,15 @@ body {
   }
 }
 .article__image {
-  width: 25%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  display: none;
+}
+@media screen and (min-width: 540px) {
+  .article__image {
+    display: block;
+    max-width: 25%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
 }
 .article__title {
   margin: 5px 0;
@@ -334,6 +359,68 @@ body {
   border-bottom: 1px solid #e0ddaa;
 }
 
+.article-detail__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 10px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+@media screen and (min-width: 540px) {
+  .article-detail__content {
+    grid-template-columns: 75% 25%;
+  }
+}
+.article-detail__title {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 400;
+}
+.article-detail__title::after {
+  content: " ";
+  display: block;
+  width: 30vh;
+  height: 1px;
+  background-color: #b2a567;
+  margin: 5px auto;
+}
+.article-detail__author, .article-detail__genre {
+  margin: 0;
+}
+@media screen and (min-width: 540px) {
+  .article-detail__author, .article-detail__genre {
+    grid-column: 1;
+  }
+}
+.article-detail__image {
+  max-width: 300px;
+}
+@media screen and (min-width: 540px) {
+  .article-detail__image {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    width: 100%;
+  }
+}
+.article-detail__review {
+  margin: 0;
+  text-align: justify;
+}
+@media screen and (min-width: 540px) {
+  .article-detail__review {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+@media screen and (min-width: 540px) {
+  .article-detail__score {
+    grid-row: 4/5;
+  }
+}
+
 .button {
   position: absolute;
   right: 10px;
@@ -347,6 +434,13 @@ body {
 }
 .button:hover {
   background-color: #b2a567;
+  color: white;
+}
+.button__link {
+  color: #b2a567;
+  text-decoration: none;
+}
+.button__link:hover {
   color: white;
 }
 .button--write-me {
@@ -366,6 +460,114 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.grid-news {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+}
+@media screen and (min-width: 800px) {
+  .grid-news {
+    grid-template-columns: 75% 25%;
+    grid-auto-flow: dense;
+  }
+}
+
+.news__month {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #e0ddaa;
+  padding: 10px;
+}
+.news__month-title {
+  margin: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+}
+.news__month-title::after {
+  content: " ";
+  display: block;
+  width: 18vh;
+  height: 1px;
+  background-color: #b2a567;
+  margin-top: 5px;
+}
+.news__item {
+  padding-bottom: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (min-width: 800px) {
+  .news__item {
+    grid-column: 1/2;
+  }
+}
+.news__header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.news__name {
+  margin: 0;
+}
+.news__date {
+  margin: 0;
+  border: 1px solid #b2a567;
+  border-radius: 5px;
+  padding: 3px 10px;
+  background-color: #b2a567;
+}
+.news__content {
+  display: flex;
+  gap: 5px;
+}
+.news__info {
+  margin: 0;
+  color: gray;
+  font-size: 14px;
+  font-style: italic;
+}
+.news__image {
+  max-width: 20%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.news__review {
+  margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+  .news--right {
+    grid-column: 2/3;
+    align-self: start;
+  }
+}
+
+.news__item:not(:last-child) {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0ddaa;
+}
+
+.to-be-read__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #b2a567;
+}
+.to-be-read__title::after {
+  content: " ";
+  display: block;
+  width: 50vh;
+  height: 1px;
+  background-color: #b2a567;
+  margin: 5px auto;
 }
 
 .filter {
@@ -425,9 +627,9 @@ body {
   grid-auto-rows: auto;
   gap: 10px;
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 800px) {
   .grid-list {
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -489,6 +691,7 @@ body {
 }
 @media screen and (min-width: 540px) {
   .footer__image {
+    display: block;
     -o-object-fit: cover;
        object-fit: cover;
     width: 120px;
@@ -511,15 +714,8 @@ body {
   grid-auto-rows: auto;
   gap: 20px;
 }
-@media screen and (min-width: 540px) {
-  .grid-template__footer {
-    display: grid;
-    grid-column: 1fr;
-  }
-}
 @media screen and (min-width: 960px) {
   .grid-template__footer {
-    grid-template-columns: 75% 23%;
-    grid-auto-flow: dense;
+    grid-template-columns: 75% 25%;
   }
 }/*# sourceMappingURL=style.css.map */

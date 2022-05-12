@@ -14,6 +14,13 @@
       background-color: colors.$c-second;
       color: white;
     }
+    &__link {
+      color: colors.$c-second;
+      text-decoration: none;
+      &:hover {
+        color: white;
+      }
+    }
     &--write-me {
       border: 1px solid colors.$c-first;
       color: colors.$c-first;

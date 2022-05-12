@@ -3,7 +3,7 @@
 .news, .events {
     border: 1px solid colors.$c-third;
     padding: 20px;
-    box-shadow: 1px 1px 20px colors.$c-third;
+    box-shadow: 1px 1px 10px colors.$c-third;
     &__title {
       margin: 0;
       text-transform: uppercase;
@@ -43,4 +43,7 @@
     text-align: center;
     border: 1px solid colors.$c-second;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

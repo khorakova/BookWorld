@@ -34,11 +34,11 @@
         </div>
         <div class="header-menu">
             <ul class="menu">
-                <li><a class="menu__item" href="/">Hlavní stránka</a></li>
-                <li><a class="menu__item" href="/novinky/">Novinky</a></li>
-                <li><a class="menu__item" href="/chystam-se-cist/">Chystám se číst</a></li>
-                <li><a class="menu__item" href="/recenze/">Recenze</a></li>
-                <li><a class="menu__item" href="/zebricky/">Žebříčky</a></li>
+                <li><a class="menu__item {{ 'menu__item--active' if page.fileSlug === '' }}" href="/">Hlavní stránka</a></li>
+                <li><a class="menu__item {{ 'menu__item--active' if page.fileSlug === 'novinky' }}" href="/novinky/">Novinky</a></li>
+                <li><a class="menu__item {{ 'menu__item--active' if page.fileSlug === 'chystam-se-cist' }}" href="/chystam-se-cist/">Chystám se číst</a></li>
+                <li><a class="menu__item {{ 'menu__item--active' if page.fileSlug === 'recenze' }}" href="/recenze/">Recenze</a></li>
+                <li><a class="menu__item {{ 'menu__item--active' if page.fileSlug === 'zebricky' }}" href="/zebricky/">Žebříčky</a></li>
             </ul>
         </div>
     </header>

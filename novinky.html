@@ -2,29 +2,82 @@
 layout: hlavni-sablona.njk
 title: Hlavní stránka
 ---
+
 <section class="content">
-
-<div class="grid-news">
-<div class="article">
-    <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
-    <div class="article__content">
-        <h2 class="article__title">Půlnoční knihovna</h2>
-        <p class="article__author">Matt Haig</p>
-        <p class="article__genre">Světová beletrie, Román</p>
-        <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
-        <button class="button">číst dále</button>
+  <div class="grid-news">
+    <div class="news news--right">
+      <h3 class="news__title">Brzy vychází</h3>
+      <div class="grid-small">
+        <div class="flex__item">
+          <div class="flex__date">25. Pro</div>
+          <div class="flex__info">název knihy, autor</div>
+        </div>
+        <div class="flex__item">
+          <div class="flex__date">25. Pro</div>
+          <div class="flex__info">název knihy, autor</div>
+        </div>
+        <div class="flex__item">
+          <div class="flex__date">25. Pro</div>
+          <div class="flex__info">název knihy, autor</div>
+        </div>
+      </div>
     </div>
-</div>
-<div class="article">
-    <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
-    <div class="article__content">
-        <h2 class="article__title">Půlnoční knihovna</h2>
-        <p class="article__author">Matt Haig</p>
-        <p class="article__genre">Světová beletrie, Román</p>
-        <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
-        <button class="button">číst dále</button>
-    </div>
-</div>
-</div>
 
+    <div class="news__month">
+      <h2 class="news__month-title">Vychází v květnu:</h2>
+
+      <div class="news__item">
+        <div class="news__header">
+          <p class="news__name">Půlnoční knihovna</p>
+          <p class="news__date">Vychází: 25.května</p>
+        </div>
+        <div class="news__content">
+          <p class="news__info">Matt Haig</p>
+          <p class="news__info">,</p>
+          <p class="news__info">Světová beletrie</p>
+        </div>
+        <div class="news__content">
+          <img
+            class="news__image"
+            src="/images/book-1.png"
+            alt="ilustrační foto knihy"
+          />
+          <p class="news__review">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit
+            egestas venenatis tempor risus, cras dignissim ac tristique. Mi
+            lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in
+            tortor ultrices dictum eget gravida odio. Felis vulputate proin odio
+            nulla consequat. Posuere turpis arcu massa consectetur.
+          </p>
+        </div>
+      </div>
+      <div class="news__item">
+        <div class="news__header">
+          <p class="news__name">Půlnoční knihovna</p>
+          <p class="news__date">Vychází: 25.května</p>
+        </div>
+        <div class="news__content">
+          <p class="news__info">Matt Haig</p>
+          <p class="news__info">,</p>
+          <p class="news__info">Světová beletrie</p>
+        </div>
+        <div class="news__content">
+          <img
+            class="news__image"
+            src="/images/book-1.png"
+            alt="ilustrační foto knihy"
+          />
+          <p class="news__review">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit
+            egestas venenatis tempor risus, cras dignissim ac tristique. Mi
+            lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in
+            tortor ultrices dictum eget gravida odio. Felis vulputate proin odio
+            nulla consequat. Posuere turpis arcu massa consectetur.
+          </p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
 </section>

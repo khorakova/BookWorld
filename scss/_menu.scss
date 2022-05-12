@@ -2,12 +2,13 @@
 
 .menu {
     display: none;
-    @media screen and (min-width: 540px) {
+    @media screen and (min-width: 800px) {
+      max-width: 1200px;
+      margin: 0 auto;
       border-bottom: 1px solid colors.$c-third;
-      box-shadow: 0 1px 3px colors.$c-third;
+      box-shadow: 0 1px 0  colors.$c-third;
       padding-left: 0;
       padding: 10px;
-      margin: 0;
       display: flex;
       list-style: none;
       justify-content: space-around;
@@ -20,7 +21,7 @@
         &:hover {
           color: colors.$c-second;
         }
-        &:active {
+        &--active {
           color: colors.$c-second;
         }
       }
