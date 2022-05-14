@@ -39,7 +39,9 @@
     &__item {
       padding: 8px 12px;
       display: block;
-      border-bottom: 1px solid #b2a567;
+      &:not(:last-child) {
+        border-bottom: 1px solid colors.$c-second;
+      }
       &:hover {
         background-color: colors.$c-second;
         color: white;

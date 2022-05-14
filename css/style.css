@@ -146,6 +146,7 @@ body {
   position: absolute;
   top: 30px;
   right: 0;
+  z-index: 1;
 }
 .hamburger-menu__list {
   display: none;
@@ -153,9 +154,11 @@ body {
   padding: 0;
   list-style: none;
   background-color: #e0ddaa;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
-.hamburger-menu__item {
-  border-bottom: 1px solid black;
+.hamburger-menu__item:not(:last-child) {
+  border-bottom: 1px solid #b2a567;
 }
 @media screen and (min-width: 800px) {
   .hamburger-menu__item {
@@ -173,8 +176,11 @@ body {
   color: whitesmoke;
 }
 .hamburger-menu__toggler {
-  margin: 10px;
+  margin-right: 5px;
   font-size: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 @media screen and (min-width: 800px) {
   .hamburger-menu__toggler {
@@ -658,6 +664,8 @@ body {
 .dropdown__item {
   padding: 8px 12px;
   display: block;
+}
+.dropdown__item:not(:last-child) {
   border-bottom: 1px solid #b2a567;
 }
 .dropdown__item:hover {
