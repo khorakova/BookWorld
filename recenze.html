@@ -1,6 +1,10 @@
 ---
 layout: hlavni-sablona.njk
 title: Recenze
+pagination:
+    data: collections.recenze
+    size: 3
+    alias: recenzes
 ---
 <section class="content">
 
@@ -34,7 +38,7 @@ title: Recenze
 
 <div class="grid-article">
 
-{% for recenze in collections.recenze | reverse %}
+{% for recenze in recenzes | reverse %}
     <div class="article">
         <img class="article__image" src="/images/{{recenze.data.foto }}" alt="{{ recenze.data.alt }}">
         <div class="article__content">
@@ -43,7 +47,7 @@ title: Recenze
             <p class="article__genre">{{ recenze.data.genre }}</p>
             <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
             <p class="article__score">{{ recenze.data.score }}</p>
-            <button class="button"><a class="button__link" href="{{ recenze.url }}">Číst dále</a></button>
+            <button class="button button--absolute"><a class="button__link" href="{{ recenze.url }}">Číst dále</a></button>
         </div>
     </div>
 {% endfor %}
@@ -72,9 +76,14 @@ title: Recenze
 </div> -->
 </div>
 
-<div class="next-page">
-<button class="button button--center">načíst další</button>
-<p>1, 2, 3, .... další</p>
+<div class="pagination">
+    <ul class="pagination__list">
+        <li class="button">{% if pagination.href.previous %}<a class="pagination__item" href="{{ pagination.href.previous }}">Předchozí</a>{% else %}Previous{% endif %}</li>
+    {%- for pageEntry in pagination.pages %}
+        <li><a class="pagination__item" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a></li>
+    {%- endfor %}
+        <li class="button">{% if pagination.href.next %}<a class="pagination__item" href="{{ pagination.href.next }}">Další</a>{% else %}Next{% endif %}</li>
+    </ul>
 </div>
 
 </section>

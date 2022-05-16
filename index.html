@@ -1,12 +1,16 @@
 ---
 layout: hlavni-sablona.njk
 title: Hlavní stránka
+pagination:
+    data: collections.recenze
+    size: 3
+    alias: recenzes
 ---
     <section class="hero">
         <div class="hero__background">
             <div class="hero__content">
             <h1 class="hero__title">Vítej na mém blogu</h1>
-            <p class="hero__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            <p class="hero__subtitle">Ponoř se se mnou do světa knih, přečti si mé recenze, objev mé nejoblíbenější knihy nebo se informuj o tom co za knihy brzy vyjde a nemělo by ti uniknout.</p>
             </div>
         </div>
     </section>
@@ -14,42 +18,21 @@ title: Hlavní stránka
     <section class="main-content">
         <div class="grid-article">
 
-            <div class="article">
-                <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
-                <div class="article__content">
-                    <h2 class="article__title">Půlnoční knihovna</h2>
-                    <p class="article__author">Matt Haig</p>
-                    <p class="article__genre">Světová beletrie, Román</p>
-                    <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
-                    <p class="article__score">Hodnocení</p>
-                    <button class="button">číst dále</button>
+            {% for recenze in recenzes | reverse %}
+                <div class="article">
+                    <img class="article__image" src="/images/{{recenze.data.foto }}" alt="{{ recenze.data.alt }}">
+                    <div class="article__content">
+                        <h2 class="article__title">{{ recenze.data.title }}</h2>
+                        <p class="article__author">{{ recenze.data.author }}</p>
+                        <p class="article__genre">{{ recenze.data.genre }}</p>
+                        <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
+                        <p class="article__score">{{ recenze.data.score }}</p>
+                        <button class="button button--absolute"><a class="button__link" href="{{ recenze.url }}">Číst dále</a></button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="article">
-                <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
-                <div class="article__content">
-                    <h2 class="article__title">Půlnoční knihovna</h2>
-                    <p class="article__author">Matt Haig</p>
-                    <p class="article__genre">Světová beletrie, Román</p>
-                    <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
-                    <p class="article__score">Hodnocení</p>
-                    <button class="button">číst dále</button>
-                </div>
-            </div>
-
-            <div class="article">
-                <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
-                <div class="article__content">
-                    <h2 class="article__title">Půlnoční knihovna</h2>
-                    <p class="article__author">Matt Haig</p>
-                    <p class="article__genre">Světová beletrie, Román</p>
-                    <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
-                    <p class="article__score">Hodnocení</p>
-                    <button class="button">číst dále</button>
-                </div>
-            </div>
-        </div>    
+            {% endfor %}
+            
+        </div>
 
         <div class="grid-right-side">
             <div class="news">
@@ -79,7 +62,7 @@ title: Hlavní stránka
                     <input class="write-me__input" type="email" name="email">
                     <label class="write-me__label" for="content">Napiš mi</label>
                     <textarea class="write-me__textarea" name="content" rows="4"> </textarea>
-                    <button class="button button--write-me">Odeslat</button>
+                    <button class="button button--absolute button--write-me">Odeslat</button>
                 </form>
             </div>
 

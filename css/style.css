@@ -476,9 +476,6 @@ body {
 }
 
 .button {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
   text-transform: uppercase;
   border: 1px solid #b2a567;
   border-radius: 5px;
@@ -505,15 +502,27 @@ body {
   background-color: #0e151b;
   color: white;
 }
-.button--center {
-  position: unset;
-  margin-right: 10px;
+.button--absolute {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
-.next-page {
+.pagination__list {
   display: flex;
+  list-style: none;
   justify-content: center;
   align-items: center;
+  gap: 5px;
+}
+.pagination__item {
+  color: #b2a567;
+  padding: 5px;
+}
+.pagination__item:hover {
+  background-color: #b2a567;
+  color: whitesmoke;
+  border-radius: 5px;
 }
 
 .grid-news {

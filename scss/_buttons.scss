@@ -1,9 +1,6 @@
 @use 'colors'; 
 
 .button {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
     text-transform: uppercase;
     border: 1px solid colors.$c-second;
     border-radius: 5px;
@@ -29,14 +26,11 @@
         color: white;
       }
     }
-    &--center {
-      position: unset;
-      margin-right: 10px;
+    &--absolute {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
     }
   }
 
-  .next-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
