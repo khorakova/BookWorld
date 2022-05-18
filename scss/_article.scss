@@ -3,8 +3,11 @@
 .article {
     position: relative;
     display: flex;
+    align-items: center;
     gap: 15px;
-    padding: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 10px colors.$c-third;
     @media screen and (min-width: 540px) {
       grid-column: 1 / span 3;
     }
@@ -17,8 +20,8 @@
       @media screen and (min-width: 540px) {
         display: block;
         max-width: 20%;
-        min-width: 180px;
-        max-height: 280px;
+        min-width: 150px;
+        max-height: 250px;
         object-fit: cover;
       } 
     }
@@ -39,6 +42,9 @@
     }
     &__author, &__genre {
       margin: 5px 0;
+      margin: 0;
+      color: gray;
+      font-style: italic;
     }
     &__review {
       text-align: justify;
@@ -46,7 +52,6 @@
   }
   
   .article:not(:last-child) {
-      padding-bottom: 10px;
       border-bottom: 1px solid colors.$c-third;
   }
 
@@ -78,6 +83,8 @@
     }
     &__author, &__genre {
       margin: 0;
+      color: gray;
+      font-style: italic;
       @media screen and (min-width: 540px) {
         grid-column: 1;
       }

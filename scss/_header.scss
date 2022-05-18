@@ -1,5 +1,10 @@
 @use 'colors';
 
+.header {
+  background-color: white;
+  border-bottom: 1px solid colors.$c-third;
+}
+
 .header-top {
     @media screen and (min-width: 540px) {
       display: flex;

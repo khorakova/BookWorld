@@ -13,11 +13,13 @@
 
 .news {
   &__month {
+    background-color: white;
+    box-shadow: 1px 1px 10px colors.$c-third;
     display: flex;
     flex-direction: column;
     gap: 10px;
     border: 1px solid colors.$c-third;
-    padding: 10px;
+    padding: 20px;
   }
   &__month-title {
     margin: 0;

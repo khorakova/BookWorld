@@ -4,6 +4,7 @@
     border: 1px solid colors.$c-third;
     padding: 20px;
     box-shadow: 1px 1px 10px colors.$c-third;
+    background-color: white;
     &__title {
       margin: 0;
       text-transform: uppercase;
@@ -32,7 +33,7 @@
   .flex__item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     gap: 10px;
   }
   .flex__date {
@@ -46,4 +47,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .flex__info {
+    &--title {
+      margin: 0;
+    }
+    &--author {
+      margin: 0;
+      color: grey;
+      font-style: italic;
+    }
   }
