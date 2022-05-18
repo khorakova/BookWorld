@@ -1,55 +1,38 @@
 ---
-layout: hlavni-sablona.njk
+layout: layouts/hlavni-sablona.njk
 title: Hlavní stránka
 ---
 
 <section class="content">
+
   <div class="grid-news">
-    <div class="news news--right">
-      <h3 class="news__title">Brzy vychází</h3>
-      <div class="grid-small">
-        <div class="flex__item">
-          <div class="flex__date">25. Pro</div>
-          <div class="flex__info">název knihy, autor</div>
-        </div>
-        <div class="flex__item">
-          <div class="flex__date">25. Pro</div>
-          <div class="flex__info">název knihy, autor</div>
-        </div>
-        <div class="flex__item">
-          <div class="flex__date">25. Pro</div>
-          <div class="flex__info">název knihy, autor</div>
-        </div>
-      </div>
-    </div>
+   
+    {% include 'partials/news-box.njk' %}
 
     <div class="news__month">
       <h2 class="news__month-title">Vychází v květnu:</h2>
 
       <div class="news__item">
         <div class="news__header">
-          <p class="news__name">Půlnoční knihovna</p>
-          <p class="news__date">Vychází: 25.května</p>
+          <p class="news__name">Legenda o Ladě</p>
+          <p class="news__date">Vychází: 30.5.2022</p>
         </div>
         <div class="news__content">
-          <p class="news__info">Matt Haig</p>
+          <p class="news__info">Jana Švecová</p>
           <p class="news__info">,</p>
-          <p class="news__info">Světová beletrie</p>
+          <p class="news__info">Young-Adult Fantasy</p>
         </div>
         <div class="news__content">
           <img
             class="news__image"
-            src="/images/book-1.png"
+            src="/images/legenda-o-lade.png"
             alt="ilustrační foto knihy"
           />
           <p class="news__review">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit
-            egestas venenatis tempor risus, cras dignissim ac tristique. Mi
-            lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in
-            tortor ultrices dictum eget gravida odio. Felis vulputate proin odio
-            nulla consequat. Posuere turpis arcu massa consectetur.
+            Na den, kdy na ni se šťastným úsměvem Ilja zamával a pak se pod ním během chvilky prolomil led, Lada nikdy nezapomene. Vzal si ho vodjanoj, pán řeky, a ona teď cítí vinu. Odmítá se smířit s tím, co se stalo, a rozhodne se navštívit kolduna – místního čaroděje. Ten jí prozradí, že existuje způsob, jak ho přivést zpět. Bude však muset najít Strom světa a u jeho kořenů obětovat jiný lidský život. Jedině tak může projít do podsvětí a Ilju zachránit…
           </p>
         </div>
+        <p class="news__info">Informační text a foto převzato ze stránek <a class="news__link" href="https://www.albatrosmedia.cz/tituly/69526873/legenda-o-lade/">nakladetele</a>.</p>
       </div>
       <div class="news__item">
         <div class="news__header">

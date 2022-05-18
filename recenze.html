@@ -1,5 +1,5 @@
 ---
-layout: hlavni-sablona.njk
+layout: layouts/hlavni-sablona.njk
 title: Recenze
 pagination:
     data: collections.recenze
@@ -45,44 +45,22 @@ pagination:
             <h2 class="article__title">{{ recenze.data.title }}</h2>
             <p class="article__author">{{ recenze.data.author }}</p>
             <p class="article__genre">{{ recenze.data.genre }}</p>
-            <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
+            <p class="article__review">{{ recenze.templateContent | safe | truncate(500) }}</p>
             <p class="article__score">{{ recenze.data.score }}</p>
             <button class="button button--absolute"><a class="button__link" href="{{ recenze.url }}">Číst dále</a></button>
         </div>
     </div>
 {% endfor %}
 
-<!-- <div class="article">
-    <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
-    <div class="article__content">
-        <h2 class="article__title">Půlnoční knihovna</h2>
-        <p class="article__author">Matt Haig</p>
-        <p class="article__genre">Světová beletrie, Román</p>
-        <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
-        <p class="article__score">Hodnocení</p>
-        <button class="button">číst dále</button>
-    </div>
-</div>
-<div class="article">
-    <img class="article__image" src="/images/book-1.png" alt="ilustrační foto knihy">
-    <div class="article__content">
-        <h2 class="article__title">Půlnoční knihovna</h2>
-        <p class="article__author">Matt Haig</p>
-        <p class="article__genre">Světová beletrie, Román</p>
-        <p class="article__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit egestas venenatis tempor risus, cras dignissim ac tristique. Mi lacinia ut massa laoreet nunc, non sed. Diam venenatis egestas in tortor ultrices dictum eget gravida odio. Felis vulputate proin odio nulla consequat. Posuere turpis arcu massa consectetur. Fermentum suspendisse nulla et diam consectetur aenean ullamcorper suscipit justo. Etiam vulputate enim lectus condimentum iaculis dui interdum metus.</p>
-        <p class="article__score">Hodnocení</p>
-        <button class="button">číst dále</button>
-    </div>
-</div> -->
 </div>
 
 <div class="pagination">
     <ul class="pagination__list">
-        <li class="button">{% if pagination.href.previous %}<a class="pagination__item" href="{{ pagination.href.previous }}">Předchozí</a>{% else %}Previous{% endif %}</li>
+        {% if pagination.href.previous %}<li class="pagination__item"><a class="pagination__item" href="{{ pagination.href.previous }}">Předchozí</a></li>{% endif %}
     {%- for pageEntry in pagination.pages %}
         <li><a class="pagination__item" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a></li>
     {%- endfor %}
-        <li class="button">{% if pagination.href.next %}<a class="pagination__item" href="{{ pagination.href.next }}">Další</a>{% else %}Next{% endif %}</li>
+        {% if pagination.href.next %}<li class="pagination__item"><a class="pagination__item" href="{{ pagination.href.next }}">Další</a></li>{% endif %}
     </ul>
 </div>
 

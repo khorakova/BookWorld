@@ -4,18 +4,22 @@
     text-transform: uppercase;
     border: 1px solid colors.$c-second;
     border-radius: 5px;
-    padding: 5px 15px;
     background-color: unset;
     color: colors.$c-second;
     &:hover {
       background-color: colors.$c-second;
       color: white;
     }
+    &:hover .button__link {
+      color: white;
+    }
     &__link {
+      display: inline-block;
       color: colors.$c-second;
       text-decoration: none;
-      &:hover {
-        color: white;
+      padding: 5px 10px;
+      &--write-me {
+        color: colors.$c-first;
       }
     }
     &--write-me {

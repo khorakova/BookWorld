@@ -10,13 +10,16 @@
     }
     @media screen and (min-width: 960px) {
       grid-column: 1 / span 1;
+      max-height: 350px;
     }
     &__image {
       display: none;
       @media screen and (min-width: 540px) {
         display: block;
-        max-width: 25%;
-        object-fit: contain;
+        max-width: 20%;
+        min-width: 180px;
+        max-height: 280px;
+        object-fit: cover;
       } 
     }
     &__title {
