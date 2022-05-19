@@ -53,13 +53,15 @@
   }
   &__name {
     margin: 0;
+    font-size: 20px;
+    border-bottom: 1px solid colors.$c-third;
   }
   &__date {
     margin: 0;
-    border: 1px solid colors.$c-second;
+    border: 1px solid colors.$c-third;
     border-radius: 5px;
     padding: 3px 10px;
-    background-color: colors.$c-second;
+    background-color: colors.$c-third;
   }
   &__content {
     display: flex;
