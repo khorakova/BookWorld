@@ -18,11 +18,11 @@
       color: colors.$c-second;
       text-decoration: none;
       padding: 5px 10px;
-      &--write-me {
+      &--firstcolor {
         color: colors.$c-first;
       }
     }
-    &--write-me {
+    &--firstcolor {
       border: 1px solid colors.$c-first;
       color: colors.$c-first;
       &:hover {
@@ -37,7 +37,8 @@
     }
     &--center {
       justify-self: center;
-      
+      margin: 0 auto;
+      display: block;
     }
   }
 

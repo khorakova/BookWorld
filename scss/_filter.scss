@@ -16,31 +16,32 @@
     &__button {
       position: relative;
       text-transform: uppercase;
-      border: 1px solid colors.$c-second;
+      border: 1px solid colors.$c-first;
       border-radius: 5px;
       padding: 5px 15px;
       background-color: unset;
-      color: colors.$c-second;
+      color: colors.$c-first;
       &:hover {
         background-color: colors.$c-second;
         color: white;
+        border: colors.$c-second;
     }
     }
     &__content {
       display: none;
       position: absolute;
-      background-color: colors.$c-third;
+      background-color: colors.$c-first;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       border-radius: 5px;
-      color: #0e151b;
+      color: colors.$c-fourth;
       z-index: 1;
     }
     &__item {
       padding: 8px 12px;
       display: block;
       &:not(:last-child) {
-        border-bottom: 1px solid colors.$c-second;
+        border-bottom: 1px solid colors.$c-fourth;
       }
       &:hover {
         background-color: colors.$c-second;

@@ -1,7 +1,7 @@
 @use 'colors'; 
 
 .news, .events {
-    border: 1px solid colors.$c-third;
+    // border: 1px solid colors.$c-third;
     padding: 20px;
     box-shadow: 1px 1px 10px colors.$c-third;
     background-color: white;
@@ -23,11 +23,11 @@
   }
 
   .grid-small {
-    margin-top: 20px;
+    max-width: max-content;
+    margin: 20px auto 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    align-items: start;
   }
   
   .flex__item {

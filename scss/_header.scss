@@ -6,6 +6,7 @@
 }
 
 .header-top {
+  background-color: white;
     @media screen and (min-width: 540px) {
       display: flex;
       justify-content: space-between;
@@ -78,12 +79,12 @@
   
   .logo {
     text-align: center;
-    margin-top: 15px;
+    padding-top: 15px;
     border-bottom: 1px solid colors.$c-second;
     &__image {
       width: 60%;
       @media screen and (min-width: 540px) {
-        width: 40%;
+        width: 30%;
       }
     }
   }

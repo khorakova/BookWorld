@@ -6,15 +6,12 @@
       background-image: url(/images/hero-picture-black.png);
       background-position: center;
       background-size: cover;
-      height: 200px;
+      height: 280px;
       color: whitesmoke;
       padding-top: 30px;
       @media screen and (min-width: 540px) {
-        height: 250px;
-        padding: 50px;
-      }
-      @media screen and (min-width: 960px) {
         height: 300px;
+        padding: 50px;
       }
     }
     &__content {

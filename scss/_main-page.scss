@@ -5,10 +5,15 @@
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 10px 30px;
+    grid-auto-flow: dense;
     @media screen and (min-width: 960px) {
       grid-template-columns: 75% 25%;
     }
   }
+
+.button-article-main-page {
+  grid-column: 1;
+}
 
 .grid-article {
     display: grid;

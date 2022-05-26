@@ -2,9 +2,6 @@
 
 .article {
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 15px;
     padding: 20px;
     background-color: white;
     box-shadow: 1px 1px 10px colors.$c-third;
@@ -14,6 +11,11 @@
     @media screen and (min-width: 960px) {
       grid-column: 1 / span 1;
       max-height: 350px;
+    }
+    &__content {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
     &__image {
       display: none;
@@ -26,7 +28,7 @@
       } 
     }
     &__title {
-      margin: 5px 0;
+      margin: 0 0 10px 0;
       text-align: center;
       text-transform: uppercase;
       font-size: 20px;
@@ -34,7 +36,7 @@
       &::after {
         content: " ";
         display: block;
-        width: 30vh;
+        width: 40%;
         height: 1px;
         background-color: colors.$c-second;
         margin: 5px auto;
@@ -48,6 +50,9 @@
     }
     &__review {
       text-align: justify;
+    }
+    &__score {
+      margin-bottom: 35px;
     }
   }
   
@@ -63,7 +68,7 @@
       row-gap: 10px;
       column-gap: 30px;
       @media screen and (min-width: 540px) {
-        grid-template-columns: 75% 25%;
+        grid-template-columns: 7fr 3fr;
       }
     }
     &__title {
@@ -90,11 +95,13 @@
       }
     }
     &__image {
+      margin-top: 16px;
       max-width: 300px;
       @media screen and (min-width: 540px) {
         grid-column: 2 / 3;
-        grid-row: 3 / 4;
+        grid-row: 3 / 5;
         width: 100%;
+        object-fit: cover;
       }
     }
     &__review {

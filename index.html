@@ -2,76 +2,91 @@
 layout: layouts/hlavni-sablona.njk
 title: Hlavní stránka
 pagination:
-    data: collections.recenze
-    size: 3
-    alias: recenzes
+  data: collections.recenze
+  size: 3
+  alias: recenzes
 ---
-    <section class="hero">
-        <div class="hero__background">
-            <div class="hero__content">
-            <h1 class="hero__title">Vítej na mém blogu</h1>
-            <p class="hero__subtitle">Ponoř se se mnou do světa knih, přečti si mé recenze, objev mé nejoblíbenější knihy nebo se informuj o tom co za knihy brzy vyjde a nemělo by ti uniknout.</p>
-            </div>
+
+<section class="hero">
+  <div class="hero__background">
+    <div class="hero__content">
+      <h1 class="hero__title">Vítej na mém blogu</h1>
+      <p class="hero__subtitle">
+        Ponoř se se mnou do světa knih, přečti si mé recenze, objev mé
+        nejoblíbenější knihy nebo se informuj o tom co za knihy brzy vyjde a
+        nemělo by ti uniknout.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="main-content">
+  <div class="grid-article">
+    {% for recenze in recenzes | reverse %}
+    <div class="article">
+      <h2 class="article__title">{{ recenze.data.title }}</h2>
+      <div class="article__content">
+        <img
+          class="article__image"
+          src="/images/{{recenze.data.foto }}"
+          alt="{{ recenze.data.alt }}"
+        />
+        <div>
+          <p class="article__author">{{ recenze.data.author }}</p>
+          <p class="article__genre">{{ recenze.data.genre }}</p>
+          <p class="article__review">
+            {{ recenze.templateContent | safe | truncate(500) }}
+          </p>
+          <p class="article__score">{{ recenze.data.score }}</p>
         </div>
-    </section>
-
-    <section class="main-content">
-        <div class="grid-article">
-
-            {% for recenze in recenzes | reverse %}
-                <div class="article">
-                    <img class="article__image" src="/images/{{recenze.data.foto }}" alt="{{ recenze.data.alt }}">
-                    <div class="article__content">
-                        <h2 class="article__title">{{ recenze.data.title }}</h2>
-                        <p class="article__author">{{ recenze.data.author }}</p>
-                        <p class="article__genre">{{ recenze.data.genre }}</p>
-                        <p class="article__review">{{ recenze.templateContent | safe | truncate(500) }}</p>
-                        <p class="article__score">{{ recenze.data.score }}</p>
-                        <button class="button button--absolute"><a class="button__link" href="{{ recenze.url }}">Číst dále</a></button>
-                    </div>
-                </div>
-            {% endfor %}
-            
-        </div>
-
-        <div class="grid-right-side">
-
-            {% include 'partials/news-box.njk' %}
-
-            <div class="write-me">
-                <h3 class="write-me__title">Napiš mi</h3>
-                <form>
-                    <label class="write-me__label" for="name">Jméno</label>
-                    <input class="write-me__input" type="text" name="name">
-                    <label class="write-me__label" for="email">E-mail</label>
-                    <input class="write-me__input" type="email" name="email">
-                    <label class="write-me__label" for="content">Napiš mi</label>
-                    <textarea class="write-me__textarea" name="content" rows="4"> </textarea>
-                    <button class="button button--absolute button--write-me"><a class="button__link button__link--write-me">Odeslat</a></button>
-                </form>
-            </div>
-
-            <div class="events">
-                <h3 class="events__title">Události</h3>
-                <div class="grid-small">
-                    <div class="flex__item">
-                        <div class="flex__date">9.-12. Čer</div>
-                        <div class="flex__info">Svět knihy, Praha</div>
-                    </div>
-                    <div class="flex__item">
-                        <div class="flex__date">26. Lis</div>
-                        <div class="flex__info">HumbookFest, Praha</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <button class="button button--center"><a class="button__link" href="/recenze/">Další recenze</a></button>
-
-    </section>
-
-
-
-
+        <button class="button button--absolute">
+          <a class="button__link" href="{{ recenze.url }}">Číst dále</a>
+        </button>
+      </div>
+    </div>
+    {% endfor %}
 
     
+ </div>
+
+    <button class="button button--center button--firstcolor button-article-main-page">
+      <a class="button__link button__link--firstcolor" href="/recenze/">Další recenze</a>
+    </button>
+ 
+
+  <div class="grid-right-side">
+    {% include 'partials/news-box.njk' %}
+
+    <div class="write-me">
+      <h3 class="write-me__title">Napiš mi</h3>
+      <form>
+        <label class="write-me__label" for="name">Jméno</label>
+        <input class="write-me__input" type="text" name="name" />
+        <label class="write-me__label" for="email">E-mail</label>
+        <input class="write-me__input" type="email" name="email" />
+        <label class="write-me__label" for="content">Napiš mi</label>
+        <textarea class="write-me__textarea" name="content" rows="4">
+        </textarea>
+        <button class="button button--absolute button--firstcolor">
+          <a class="button__link button__link--firstcolor">Odeslat</a>
+        </button>
+      </form>
+    </div>
+
+    <div class="events">
+      <h3 class="events__title">Události</h3>
+      <div class="grid-small">
+        <div class="flex__item">
+          <div class="flex__date">9.-12. Čer</div>
+          <div class="flex__info">Svět knihy, Praha</div>
+        </div>
+        <div class="flex__item">
+          <div class="flex__date">26. Lis</div>
+          <div class="flex__info">HumbookFest, Praha</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <button class="button button--center"><a class="button__link" href="/recenze/">Další recenze</a></button> -->
+</section>

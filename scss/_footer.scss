@@ -2,8 +2,9 @@
 
 .footer {
     padding: 10px 30px 30px 30px;
-    background-color: colors.$c-third;
+    background-color: colors.$c-first;
     text-align: center;
+    color: colors.$c-fourth;
     &__title {
       text-transform: uppercase;
       font-weight: 400;
@@ -14,7 +15,7 @@
         display: block;
         width: 15vh;
         height: 1px;
-        background-color: colors.$c-second;
+        background-color: colors.$c-fourth;
         margin: 5px auto;
       }
     }
@@ -45,6 +46,12 @@
       display: flex;
       gap: 5px;
       align-items: center;
+      & .icons__image {
+        color: colors.$c-fourth;
+      }
+      & .icons__description {
+        color: colors.$c-fourth;
+      }
     }
   }
 
@@ -54,6 +61,9 @@
     grid-auto-rows: auto;
     gap: 20px;
     @media screen and (min-width: 960px) {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
       grid-template-columns: 75% 25%;
       }
   } 

@@ -3,7 +3,7 @@
 .write-me {
     position: relative;
     padding: 20px;
-    background-color: colors.$c-third;
+    background-color: colors.$c-second;
     &__title {
       margin: 0;
       text-transform: uppercase;
@@ -40,7 +40,7 @@
       border-radius: 5px;
       border: none;
       font-size: 16px;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       &:focus {
         outline: none;
         border: 2px solid colors.$c-second;

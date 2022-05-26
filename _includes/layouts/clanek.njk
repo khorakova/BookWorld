@@ -4,16 +4,23 @@ title: šablona pro jeden článek
 ---
 
 <section class="content">
-    <div class="article-detail">
-        <h2 class="article-detail__title">{{ title }}</h2>
-        <div class="article-detail__content">
-        <p class="article-detail__author">{{ author }}</p>
-        <p class="article-detail__genre">{{ genre }}</p>
-        <img class="article-detail__image" src="/images/{{ foto }}" alt="{{ alt }}">
-        <div class="article-detail__review">
-          {{ content | safe }}
-        </div>
-        <p class="article-detail__score">{{ score }}</p>
-        </div>
+  <div class="article-detail">
+    <h2 class="article-detail__title">{{ title }}</h2>
+    <div class="article-detail__content">
+      <p class="article-detail__author">{{ author }}</p>
+      <p class="article-detail__genre">{{ genre }}</p>
+      <img
+        class="article-detail__image"
+        src="/images/{{ foto }}"
+        alt="{{ alt }}"
+      />
+      <div class="article-detail__review">
+        {{ content | safe }}
+      </div>
+      <p class="article-detail__score">{{ score }}</p>
     </div>
+    <button class="button button--center">
+      <a class="button__link" href="/recenze/">zpět na všechny recenze</a>
+    </button>
+  </div>
 </section>

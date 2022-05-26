@@ -9,8 +9,9 @@
         gap: 5px;
     }
     &__item {
-        color: colors.$c-second;
+        color: colors.$c-first;
         padding: 5px;
+        text-decoration: none;
         &:hover {
             background-color: colors.$c-second;
             color: whitesmoke;

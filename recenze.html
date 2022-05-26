@@ -40,13 +40,15 @@ pagination:
 
 {% for recenze in recenzes | reverse %}
     <div class="article">
-        <img class="article__image" src="/images/{{recenze.data.foto }}" alt="{{ recenze.data.alt }}">
+        <h2 class="article__title">{{ recenze.data.title }}</h2>
         <div class="article__content">
-            <h2 class="article__title">{{ recenze.data.title }}</h2>
-            <p class="article__author">{{ recenze.data.author }}</p>
-            <p class="article__genre">{{ recenze.data.genre }}</p>
-            <p class="article__review">{{ recenze.templateContent | safe | truncate(500) }}</p>
-            <p class="article__score">{{ recenze.data.score }}</p>
+            <img class="article__image" src="/images/{{recenze.data.foto }}" alt="{{ recenze.data.alt }}">
+            <div>
+                <p class="article__author">{{ recenze.data.author }}</p>
+                <p class="article__genre">{{ recenze.data.genre }}</p>
+                <p class="article__review">{{ recenze.templateContent | safe | truncate(500) }}</p>
+                <p class="article__score">{{ recenze.data.score }}</p>
+            </div>
             <button class="button button--absolute"><a class="button__link" href="{{ recenze.url }}">Číst dále</a></button>
         </div>
     </div>
@@ -56,11 +58,11 @@ pagination:
 
 <div class="pagination">
     <ul class="pagination__list">
-        {% if pagination.href.previous %}<li class="pagination__item"><a class="pagination__item" href="{{ pagination.href.previous }}">Předchozí</a></li>{% endif %}
+        {% if pagination.href.previous %}<li><a class="pagination__item" href="{{ pagination.href.previous }}">Předchozí</a></li>{% endif %}
     {%- for pageEntry in pagination.pages %}
         <li><a class="pagination__item" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a></li>
     {%- endfor %}
-        {% if pagination.href.next %}<li class="pagination__item"><a class="pagination__item" href="{{ pagination.href.next }}">Další</a></li>{% endif %}
+        {% if pagination.href.next %}<li><a class="pagination__item" href="{{ pagination.href.next }}">Další</a></li>{% endif %}
     </ul>
 </div>
 
