@@ -61,6 +61,10 @@
   }
 
   .article-detail {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 10px colors.$c-third;
+    margin-bottom: 20px;
     &__content {
       display: grid;
       grid-template-columns: 1fr;
