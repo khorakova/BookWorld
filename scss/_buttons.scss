@@ -6,21 +6,13 @@
     border-radius: 5px;
     background-color: unset;
     color: colors.$c-second;
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 14px;
     &:hover {
       background-color: colors.$c-second;
       color: white;
-    }
-    &:hover .button__link {
-      color: white;
-    }
-    &__link {
-      display: inline-block;
-      color: colors.$c-second;
-      text-decoration: none;
-      padding: 5px 10px;
-      &--firstcolor {
-        color: colors.$c-first;
-      }
     }
     &--firstcolor {
       border: 1px solid colors.$c-first;
@@ -36,9 +28,7 @@
       bottom: 20px;
     }
     &--center {
-      justify-self: center;
-      margin: 0 auto;
-      display: block;
+      text-align: center;
     }
   }
 

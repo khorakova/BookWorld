@@ -13,6 +13,8 @@
 
 .button-article-main-page {
   grid-column: 1;
+  justify-self: center;
+  
 }
 
 .grid-article {
@@ -20,7 +22,6 @@
     grid-column: 1fr;
     grid-auto-rows: auto;
     gap: 20px;
-    // border: 1px solid colors.$c-third;
 }
 
 .grid-right-side {

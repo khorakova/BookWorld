@@ -260,6 +260,7 @@ body {
 
 .button-article-main-page {
   grid-column: 1;
+  justify-self: center;
 }
 
 .grid-article {
@@ -530,22 +531,14 @@ body {
   border-radius: 5px;
   background-color: unset;
   color: #a2ae84;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 14px;
 }
 .button:hover {
   background-color: #a2ae84;
   color: white;
-}
-.button:hover .button__link {
-  color: white;
-}
-.button__link {
-  display: inline-block;
-  color: #a2ae84;
-  text-decoration: none;
-  padding: 5px 10px;
-}
-.button__link--firstcolor {
-  color: #182129;
 }
 .button--firstcolor {
   border: 1px solid #182129;
@@ -561,9 +554,7 @@ body {
   bottom: 20px;
 }
 .button--center {
-  justify-self: center;
-  margin: 0 auto;
-  display: block;
+  text-align: center;
 }
 
 .pagination__list {

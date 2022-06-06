@@ -39,9 +39,7 @@ pagination:
           </p>
           <p class="article__score">{{ recenze.data.score }}</p>
         </div>
-        <button class="button button--absolute">
-          <a class="button__link" href="{{ recenze.url }}">Číst dále</a>
-        </button>
+          <a class="button button--absolute" href="{{ recenze.url }}">Číst dále</a>
       </div>
     </div>
     {% endfor %}
@@ -49,9 +47,9 @@ pagination:
     
  </div>
 
-    <button class="button button--center button--firstcolor button-article-main-page">
-      <a class="button__link button__link--firstcolor" href="/recenze/">Další recenze</a>
-    </button>
+    
+    <a class="button button-article-main-page button--firstcolor" href="/recenze/">Další recenze</a>
+    
  
 
   <div class="grid-right-side">
@@ -68,7 +66,7 @@ pagination:
         <textarea class="write-me__textarea" name="content" rows="4">
         </textarea>
         <button class="button button--absolute button--firstcolor">
-          <a class="button__link button__link--firstcolor">Odeslat</a>
+          <a>Odeslat</a>
         </button>
       </form>
     </div>
@@ -88,5 +86,5 @@ pagination:
     </div>
   </div>
 
-  <!-- <button class="button button--center"><a class="button__link" href="/recenze/">Další recenze</a></button> -->
+
 </section>
